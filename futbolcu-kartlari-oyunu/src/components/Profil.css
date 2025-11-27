@@ -1,0 +1,202 @@
+.profil-container {
+  min-height: 100vh;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profil-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profil-baslik {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cikis-butonu {
+  padding: 12px 30px;
+  background: rgba(255, 0, 0, 0.3);
+  border: 2px solid rgba(255, 0, 0, 0.5);
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cikis-butonu:hover {
+  background: rgba(255, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.profil-bilgileri {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.profil-kart {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.profil-kart h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.profil-detay {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profil-detay:last-child {
+  border-bottom: none;
+}
+
+.profil-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.profil-deger {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.istatistik-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.istatistik-item {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.istatistik-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.istatistik-deger {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.istatistik-deger.kazanan {
+  color: #4ade80;
+}
+
+.istatistik-deger.kaybeden {
+  color: #f87171;
+}
+
+.istatistik-deger.altin {
+  color: #ffd700;
+}
+
+.oyun-listesi {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.oyun-kaydi {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.oyun-rakip {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.oyun-skor {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.oyun-sonuc {
+  text-align: center;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.oyun-sonuc.kazandi {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.2);
+}
+
+.oyun-sonuc.kaybetti {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.2);
+}
+
+.oyun-sonuc.berabere {
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.2);
+}
+
+.oyun-tarih {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.skor-kaydedildi {
+  color: #4ade80;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .oyun-kaydi {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .istatistik-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

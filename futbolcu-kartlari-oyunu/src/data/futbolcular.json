@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "isim": "Lionel Messi",
+    "takım": "Inter Miami",
+    "pozisyon": "Forvet",
+    "güç": 95,
+    "resim": "https://ui-avatars.com/api/?name=Lionel+Messi&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 2,
+    "isim": "Cristiano Ronaldo",
+    "takım": "Al Nassr",
+    "pozisyon": "Forvet",
+    "güç": 94,
+    "resim": "https://ui-avatars.com/api/?name=Cristiano+Ronaldo&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 3,
+    "isim": "Kylian Mbappé",
+    "takım": "Paris Saint-Germain",
+    "pozisyon": "Forvet",
+    "güç": 93,
+    "resim": "https://ui-avatars.com/api/?name=Kylian+Mbappe&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 4,
+    "isim": "Erling Haaland",
+    "takım": "Manchester City",
+    "pozisyon": "Forvet",
+    "güç": 92,
+    "resim": "https://ui-avatars.com/api/?name=Erling+Haaland&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 5,
+    "isim": "Kevin De Bruyne",
+    "takım": "Manchester City",
+    "pozisyon": "Orta Saha",
+    "güç": 91,
+    "resim": "https://ui-avatars.com/api/?name=Kevin+De+Bruyne&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 6,
+    "isim": "Virgil van Dijk",
+    "takım": "Liverpool",
+    "pozisyon": "Defans",
+    "güç": 90,
+    "resim": "https://ui-avatars.com/api/?name=Virgil+van+Dijk&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 7,
+    "isim": "Karim Benzema",
+    "takım": "Al Ittihad",
+    "pozisyon": "Forvet",
+    "güç": 89,
+    "resim": "https://ui-avatars.com/api/?name=Karim+Benzema&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 8,
+    "isim": "Robert Lewandowski",
+    "takım": "Barcelona",
+    "pozisyon": "Forvet",
+    "güç": 88,
+    "resim": "https://ui-avatars.com/api/?name=Robert+Lewandowski&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 9,
+    "isim": "Mohamed Salah",
+    "takım": "Liverpool",
+    "pozisyon": "Forvet",
+    "güç": 87,
+    "resim": "https://ui-avatars.com/api/?name=Mohamed+Salah&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 10,
+    "isim": "Luka Modrić",
+    "takım": "Real Madrid",
+    "pozisyon": "Orta Saha",
+    "güç": 86,
+    "resim": "https://ui-avatars.com/api/?name=Luka+Modric&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 11,
+    "isim": "Harry Kane",
+    "takım": "Bayern Munich",
+    "pozisyon": "Forvet",
+    "güç": 85,
+    "resim": "https://ui-avatars.com/api/?name=Harry+Kane&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 12,
+    "isim": "Jude Bellingham",
+    "takım": "Real Madrid",
+    "pozisyon": "Orta Saha",
+    "güç": 84,
+    "resim": "https://ui-avatars.com/api/?name=Jude+Bellingham&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 13,
+    "isim": "Son Heung-min",
+    "takım": "Tottenham",
+    "pozisyon": "Forvet",
+    "güç": 83,
+    "resim": "https://ui-avatars.com/api/?name=Son+Heung+min&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 14,
+    "isim": "Bruno Fernandes",
+    "takım": "Manchester United",
+    "pozisyon": "Orta Saha",
+    "güç": 82,
+    "resim": "https://ui-avatars.com/api/?name=Bruno+Fernandes&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 15,
+    "isim": "Manuel Neuer",
+    "takım": "Bayern Munich",
+    "pozisyon": "Kaleci",
+    "güç": 81,
+    "resim": "https://ui-avatars.com/api/?name=Manuel+Neuer&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 16,
+    "isim": "İlkay Gündoğan",
+    "takım": "Barcelona",
+    "pozisyon": "Orta Saha",
+    "güç": 80,
+    "resim": "https://ui-avatars.com/api/?name=Ilkay+Gundogan&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 17,
+    "isim": "Joshua Kimmich",
+    "takım": "Bayern Munich",
+    "pozisyon": "Orta Saha",
+    "güç": 79,
+    "resim": "https://ui-avatars.com/api/?name=Joshua+Kimmich&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 18,
+    "isim": "Marquinhos",
+    "takım": "Paris Saint-Germain",
+    "pozisyon": "Defans",
+    "güç": 78,
+    "resim": "https://ui-avatars.com/api/?name=Marquinhos&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 19,
+    "isim": "Federico Valverde",
+    "takım": "Real Madrid",
+    "pozisyon": "Orta Saha",
+    "güç": 77,
+    "resim": "https://ui-avatars.com/api/?name=Federico+Valverde&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 20,
+    "isim": "Rafael Leão",
+    "takım": "AC Milan",
+    "pozisyon": "Forvet",
+    "güç": 76,
+    "resim": "https://ui-avatars.com/api/?name=Rafael+Leao&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 21,
+    "isim": "Vinícius Júnior",
+    "takım": "Real Madrid",
+    "pozisyon": "Forvet",
+    "güç": 75,
+    "resim": "https://ui-avatars.com/api/?name=Vinicious+Junior&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 22,
+    "isim": "Phil Foden",
+    "takım": "Manchester City",
+    "pozisyon": "Orta Saha",
+    "güç": 74,
+    "resim": "https://ui-avatars.com/api/?name=Phil+Foden&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 23,
+    "isim": "Rodri",
+    "takım": "Manchester City",
+    "pozisyon": "Orta Saha",
+    "güç": 73,
+    "resim": "https://ui-avatars.com/api/?name=Rodri&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 24,
+    "isim": "Rúben Dias",
+    "takım": "Manchester City",
+    "pozisyon": "Defans",
+    "güç": 72,
+    "resim": "https://ui-avatars.com/api/?name=Ruben+Dias&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 25,
+    "isim": "Alisson",
+    "takım": "Liverpool",
+    "pozisyon": "Kaleci",
+    "güç": 71,
+    "resim": "https://ui-avatars.com/api/?name=Alisson&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 26,
+    "isim": "Bernardo Silva",
+    "takım": "Manchester City",
+    "pozisyon": "Orta Saha",
+    "güç": 70,
+    "resim": "https://ui-avatars.com/api/?name=Bernardo+Silva&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 27,
+    "isim": "Antoine Griezmann",
+    "takım": "Atlético Madrid",
+    "pozisyon": "Forvet",
+    "güç": 69,
+    "resim": "https://ui-avatars.com/api/?name=Antoine+Griezmann&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 28,
+    "isim": "Frenkie de Jong",
+    "takım": "Barcelona",
+    "pozisyon": "Orta Saha",
+    "güç": 68,
+    "resim": "https://ui-avatars.com/api/?name=Frenkie+de+Jong&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 29,
+    "isim": "Jamal Musiala",
+    "takım": "Bayern Munich",
+    "pozisyon": "Orta Saha",
+    "güç": 67,
+    "resim": "https://ui-avatars.com/api/?name=Jamal+Musiala&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  },
+  {
+    "id": 30,
+    "isim": "Bukayo Saka",
+    "takım": "Arsenal",
+    "pozisyon": "Forvet",
+    "güç": 66,
+    "resim": "https://ui-avatars.com/api/?name=Bukayo+Saka&size=400&background=1e3c72&color=fff&bold=true&font-size=0.5"
+  }
+]

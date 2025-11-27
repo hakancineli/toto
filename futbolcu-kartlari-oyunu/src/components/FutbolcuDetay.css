@@ -1,0 +1,256 @@
+.futbolcu-detay {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+  color: white;
+}
+
+.detay-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.geri-buton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.geri-buton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-5px);
+}
+
+.favori-buton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.favori-buton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.favori-buton.aktif {
+  background: rgba(255, 215, 0, 0.3);
+  border-color: #ffd700;
+}
+
+.detay-header {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.detay-resim-container {
+  width: 200px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.detay-resim {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detay-baslik {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detay-baslik h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tam-isim {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.detay-guc {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px 25px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.guc-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.guc-degeri-buyuk {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.detay-icerik {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.detay-sol,
+.detay-sag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.detay-sol h2,
+.detay-sag h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  padding-bottom: 10px;
+}
+
+.bilgi-tablosu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bilgi-satir {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.bilgi-satir:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateX(5px);
+}
+
+.bilgi-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.bilgi-deger {
+  color: #ffd700;
+  font-weight: 700;
+  text-align: right;
+  font-size: 0.95rem;
+}
+
+.bilgi-tarih {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin-left: 5px;
+}
+
+.piyasa-degeri {
+  font-size: 1.1rem !important;
+  color: #4ade80 !important;
+}
+
+.sosyal-medya-linkler {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.sosyal-link {
+  display: inline-block;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.sosyal-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sosyal-link.twitter:hover {
+  background: rgba(29, 161, 242, 0.3);
+  border-color: #1da1f2;
+}
+
+.sosyal-link.instagram:hover {
+  background: rgba(225, 48, 108, 0.3);
+  border-color: #e1306c;
+}
+
+.sosyal-link.tiktok:hover {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: #ff0050;
+}
+
+@media (max-width: 768px) {
+  .detay-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .detay-icerik {
+    grid-template-columns: 1fr;
+  }
+  
+  .detay-baslik h1 {
+    font-size: 2rem;
+  }
+  
+  .guc-degeri-buyuk {
+    font-size: 2.5rem;
+  }
+  
+  .detay-header-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
