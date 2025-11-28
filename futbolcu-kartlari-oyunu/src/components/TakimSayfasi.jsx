@@ -82,8 +82,8 @@ const TakimSayfasi = ({ takim, onGeri }) => {
           alt="Futbol Saha" 
           className="saha-gorseli"
           onError={(e) => {
-            console.error('Görsel yüklenemedi. Lütfen görseli public/futbol-sahasi.jpg olarak kaydedin.');
-            e.target.style.display = 'none';
+            // Fallback: Alternatif görsel URL'si
+            e.target.src = "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop";
           }}
         />
 
