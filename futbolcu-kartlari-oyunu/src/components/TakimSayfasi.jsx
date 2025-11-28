@@ -92,8 +92,9 @@ const TakimSayfasi = ({ takim, onGeri }) => {
 
         {/* Kaleci */}
         {formasyon.kaleci && (() => {
-          const player = getPlayerByPosition('KL') || oyuncular.find(p => p.mevki?.includes('KL'));
+          const player = getPlayerByPosition('KL') || oyuncular.find(p => p.mevki?.includes('KL') || p.pozisyon?.includes('KL'));
           if (player) {
+            const rating = player.guc || player.güç || player.genelRating || 50;
             return (
               <div
                 className="oyuncu-saha"
@@ -101,12 +102,20 @@ const TakimSayfasi = ({ takim, onGeri }) => {
                 onMouseEnter={() => setHoveredPlayer(player)}
                 onMouseLeave={() => setHoveredPlayer(null)}
               >
-                <img src={player.resim || 'https://via.placeholder.com/60'} alt={player.isim} className="oyuncu-resim-saha" />
+                <img 
+                  src={player.resim || `https://ui-avatars.com/api/?name=${encodeURIComponent(player.isim)}&size=200&background=1e3c72&color=fff&bold=true`} 
+                  alt={player.isim} 
+                  className="oyuncu-resim-saha"
+                  onError={(e) => {
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(player.isim)}&size=200&background=1e3c72&color=fff&bold=true`;
+                  }}
+                />
+                <div className="oyuncu-rating-saha">{rating}</div>
                 {hoveredPlayer?.id === player.id && (
                   <div className="oyuncu-tooltip">
                     <strong>{player.isim}</strong>
-                    <div>Güç: {player.guc || player.güç || 50}</div>
-                    <div>Pozisyon: {player.mevki || player.basMevki}</div>
+                    <div>Güç: {rating}</div>
+                    <div>Pozisyon: {player.mevki || player.basMevki || player.pozisyon || 'KL'}</div>
                   </div>
                 )}
               </div>
@@ -119,6 +128,7 @@ const TakimSayfasi = ({ takim, onGeri }) => {
         {formasyon.defans.map((pos, index) => {
           const player = getPlayerByPosition(pos.pos) || oyuncular[index + 1];
           if (player) {
+            const rating = player.guc || player.güç || player.genelRating || 50;
             return (
               <div
                 key={`defans-${index}`}
@@ -127,12 +137,20 @@ const TakimSayfasi = ({ takim, onGeri }) => {
                 onMouseEnter={() => setHoveredPlayer(player)}
                 onMouseLeave={() => setHoveredPlayer(null)}
               >
-                <img src={player.resim || 'https://via.placeholder.com/60'} alt={player.isim} className="oyuncu-resim-saha" />
+                <img 
+                  src={player.resim || `https://ui-avatars.com/api/?name=${encodeURIComponent(player.isim)}&size=200&background=1e3c72&color=fff&bold=true`} 
+                  alt={player.isim} 
+                  className="oyuncu-resim-saha"
+                  onError={(e) => {
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(player.isim)}&size=200&background=1e3c72&color=fff&bold=true`;
+                  }}
+                />
+                <div className="oyuncu-rating-saha">{rating}</div>
                 {hoveredPlayer?.id === player.id && (
                   <div className="oyuncu-tooltip">
                     <strong>{player.isim}</strong>
-                    <div>Güç: {player.guc || player.güç || 50}</div>
-                    <div>Pozisyon: {player.mevki || player.basMevki}</div>
+                    <div>Güç: {rating}</div>
+                    <div>Pozisyon: {player.mevki || player.basMevki || player.pozisyon || pos.pos}</div>
                   </div>
                 )}
               </div>
@@ -145,6 +163,7 @@ const TakimSayfasi = ({ takim, onGeri }) => {
         {formasyon.ortaSaha.map((pos, index) => {
           const player = getPlayerByPosition(pos.pos) || oyuncular[index + 5];
           if (player) {
+            const rating = player.guc || player.güç || player.genelRating || 50;
             return (
               <div
                 key={`orta-${index}`}
@@ -153,12 +172,20 @@ const TakimSayfasi = ({ takim, onGeri }) => {
                 onMouseEnter={() => setHoveredPlayer(player)}
                 onMouseLeave={() => setHoveredPlayer(null)}
               >
-                <img src={player.resim || 'https://via.placeholder.com/60'} alt={player.isim} className="oyuncu-resim-saha" />
+                <img 
+                  src={player.resim || `https://ui-avatars.com/api/?name=${encodeURIComponent(player.isim)}&size=200&background=1e3c72&color=fff&bold=true`} 
+                  alt={player.isim} 
+                  className="oyuncu-resim-saha"
+                  onError={(e) => {
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(player.isim)}&size=200&background=1e3c72&color=fff&bold=true`;
+                  }}
+                />
+                <div className="oyuncu-rating-saha">{rating}</div>
                 {hoveredPlayer?.id === player.id && (
                   <div className="oyuncu-tooltip">
                     <strong>{player.isim}</strong>
-                    <div>Güç: {player.guc || player.güç || 50}</div>
-                    <div>Pozisyon: {player.mevki || player.basMevki}</div>
+                    <div>Güç: {rating}</div>
+                    <div>Pozisyon: {player.mevki || player.basMevki || player.pozisyon || pos.pos}</div>
                   </div>
                 )}
               </div>
@@ -171,6 +198,7 @@ const TakimSayfasi = ({ takim, onGeri }) => {
         {formasyon.forvet.map((pos, index) => {
           const player = getPlayerByPosition(pos.pos) || oyuncular[index + 8];
           if (player) {
+            const rating = player.guc || player.güç || player.genelRating || 50;
             return (
               <div
                 key={`forvet-${index}`}
@@ -179,12 +207,20 @@ const TakimSayfasi = ({ takim, onGeri }) => {
                 onMouseEnter={() => setHoveredPlayer(player)}
                 onMouseLeave={() => setHoveredPlayer(null)}
               >
-                <img src={player.resim || 'https://via.placeholder.com/60'} alt={player.isim} className="oyuncu-resim-saha" />
+                <img 
+                  src={player.resim || `https://ui-avatars.com/api/?name=${encodeURIComponent(player.isim)}&size=200&background=1e3c72&color=fff&bold=true`} 
+                  alt={player.isim} 
+                  className="oyuncu-resim-saha"
+                  onError={(e) => {
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(player.isim)}&size=200&background=1e3c72&color=fff&bold=true`;
+                  }}
+                />
+                <div className="oyuncu-rating-saha">{rating}</div>
                 {hoveredPlayer?.id === player.id && (
                   <div className="oyuncu-tooltip">
                     <strong>{player.isim}</strong>
-                    <div>Güç: {player.guc || player.güç || 50}</div>
-                    <div>Pozisyon: {player.mevki || player.basMevki}</div>
+                    <div>Güç: {rating}</div>
+                    <div>Pozisyon: {player.mevki || player.basMevki || player.pozisyon || pos.pos}</div>
                   </div>
                 )}
               </div>

@@ -81,14 +81,17 @@
 .futbol-sahasi {
   position: relative;
   width: 100%;
-  max-width: 1000px;
-  height: 600px;
-  background: linear-gradient(180deg, #2d5016 0%, #1a7a1a 50%, #2d5016 100%);
-  border: 4px solid #fff;
-  border-radius: 10px;
+  max-width: 1200px;
+  height: 700px;
+  background: linear-gradient(180deg, #2d5016 0%, #1a7a1a 30%, #2d8a2d 50%, #1a7a1a 70%, #2d5016 100%);
+  background-image: 
+    repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(255, 255, 255, 0.1) 49px, rgba(255, 255, 255, 0.1) 50px),
+    repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(255, 255, 255, 0.1) 49px, rgba(255, 255, 255, 0.1) 50px);
+  border: 5px solid #fff;
+  border-radius: 15px;
   margin: 2rem auto;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
 }
 
 .saha-cizgileri {
@@ -117,7 +120,7 @@
 .orta-cizgi {
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: #fff;
   top: 50%;
   left: 0;
@@ -127,9 +130,21 @@
 .orta-cizgi::before {
   content: '';
   position: absolute;
-  width: 100px;
-  height: 100px;
-  border: 2px solid #fff;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orta-cizgi::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -138,9 +153,9 @@
 
 .ceza-sahasi {
   position: absolute;
-  width: 30%;
-  height: 20%;
-  border: 2px solid #fff;
+  width: 35%;
+  height: 22%;
+  border: 3px solid #fff;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -148,13 +163,63 @@
 .ceza-sahasi.ust {
   top: 0;
   border-bottom: none;
-  border-radius: 10px 10px 0 0;
+  border-radius: 15px 15px 0 0;
+}
+
+.ceza-sahasi.ust::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 50%;
+  border: 3px solid #fff;
+  border-top: none;
+  border-radius: 0 0 15px 15px;
+}
+
+.ceza-sahasi.ust::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
 }
 
 .ceza-sahasi.alt {
   bottom: 0;
   border-top: none;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 15px 15px;
+}
+
+.ceza-sahasi.alt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 50%;
+  border: 3px solid #fff;
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
+}
+
+.ceza-sahasi.alt::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
 }
 
 .oyuncu-saha {
@@ -166,18 +231,43 @@
 }
 
 .oyuncu-saha:hover {
-  transform: translate(-50%, -50%) scale(1.2);
+  transform: translate(-50%, -50%) scale(1.15);
   z-index: 20;
 }
 
+.oyuncu-rating-saha {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #22c55e;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  min-width: 35px;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .oyuncu-resim-saha {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 4px solid #fff;
   object-fit: cover;
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.oyuncu-saha:hover .oyuncu-resim-saha {
+  transform: scale(1.15);
+  border-color: #ffd700;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
 }
 
 .oyuncu-tooltip {
