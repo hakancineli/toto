@@ -2,30 +2,13 @@ import React, { useState, useEffect } from 'react';
 import TakimSayfasi from './TakimSayfasi';
 import './TakimlarListesi.css';
 
-// Sofifa verilerini güvenli şekilde yükle
-let sofifaTakimlar = [];
-let sofifaFutbolcular = [];
+// Sofifa verilerini ES6 import ile yükle
+import sofifaTakimlarData from '../data/sofifa-takimlar.json';
+import sofifaFutbolcularData from '../data/sofifa-futbolcular.json';
 
-// Vite build sırasında JSON dosyaları yoksa hata vermemesi için
-try {
-  sofifaTakimlar = require('../data/sofifa-takimlar.json');
-  if (!Array.isArray(sofifaTakimlar)) {
-    sofifaTakimlar = [];
-  }
-} catch (e) {
-  // Dosya yoksa veya hata varsa boş array kullan
-  sofifaTakimlar = [];
-}
-
-try {
-  sofifaFutbolcular = require('../data/sofifa-futbolcular.json');
-  if (!Array.isArray(sofifaFutbolcular)) {
-    sofifaFutbolcular = [];
-  }
-} catch (e) {
-  // Dosya yoksa veya hata varsa boş array kullan
-  sofifaFutbolcular = [];
-}
+// Verileri güvenli şekilde al
+const sofifaTakimlar = Array.isArray(sofifaTakimlarData) ? sofifaTakimlarData : [];
+const sofifaFutbolcular = Array.isArray(sofifaFutbolcularData) ? sofifaFutbolcularData : [];
 
 const TakimlarListesi = () => {
   const [takimlar, setTakimlar] = useState([]);
