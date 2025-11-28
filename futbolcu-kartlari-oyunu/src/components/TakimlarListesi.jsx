@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import TakimSayfasi from './TakimSayfasi';
-import sofifaTakimlar from '../data/sofifa-takimlar.json';
-import sofifaFutbolcular from '../data/sofifa-futbolcular.json';
 import './TakimlarListesi.css';
+
+// Sofifa verilerini güvenli şekilde yükle
+let sofifaTakimlar = [];
+let sofifaFutbolcular = [];
+
+try {
+  sofifaTakimlar = require('../data/sofifa-takimlar.json') || [];
+} catch (e) {
+  console.warn('sofifa-takimlar.json yüklenemedi:', e);
+}
+
+try {
+  sofifaFutbolcular = require('../data/sofifa-futbolcular.json') || [];
+} catch (e) {
+  console.warn('sofifa-futbolcular.json yüklenemedi:', e);
+}
 
 const TakimlarListesi = () => {
   const [takimlar, setTakimlar] = useState([]);
@@ -13,8 +27,8 @@ const TakimlarListesi = () => {
   useEffect(() => {
     try {
       // Sofifa verilerini yükle
-      const takimVerileri = sofifaTakimlar || [];
-      const oyuncuVerileri = sofifaFutbolcular || [];
+      const takimVerileri = Array.isArray(sofifaTakimlar) ? sofifaTakimlar : [];
+      const oyuncuVerileri = Array.isArray(sofifaFutbolcular) ? sofifaFutbolcular : [];
       
       // Takımlara oyuncularını ekle
       const takimlarOyuncularla = takimVerileri.map(takim => {
@@ -30,6 +44,7 @@ const TakimlarListesi = () => {
       setTakimlar(takimlarOyuncularla);
     } catch (error) {
       console.error('Takım verileri yüklenemedi:', error);
+      setTakimlar([]);
     }
   }, []);
 
