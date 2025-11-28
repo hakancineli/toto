@@ -1,0 +1,181 @@
+.takimlar-listesi {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.takimlar-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.takimlar-header h1 {
+  font-size: 3rem;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.takimlar-header p {
+  color: #a0a0a0;
+  font-size: 1.2rem;
+}
+
+.takimlar-filtreler {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(20, 40, 80, 0.8));
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.arama-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.arama-input:focus {
+  border-color: #4ade80;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.arama-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lig-select {
+  padding: 12px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.lig-select:focus {
+  border-color: #4ade80;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.lig-select option {
+  background: #1e3c72;
+  color: #fff;
+}
+
+.takimlar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.takim-kart {
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(20, 40, 80, 0.8));
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.takim-kart::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(255, 215, 0, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.takim-kart:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.takim-kart:hover::before {
+  opacity: 1;
+}
+
+.takim-kart-logo {
+  position: relative;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.takim-kart-logo img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.takim-kart:hover .takim-kart-logo img {
+  transform: scale(1.1);
+}
+
+.takim-kart-yildizlar {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid #ffd700;
+}
+
+.takim-kart-bilgi h3 {
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.takim-kart-lig {
+  color: #a0a0a0;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.takim-kart-oyuncu {
+  color: #4ade80;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .takimlar-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .takimlar-filtreler {
+    flex-direction: column;
+  }
+}
+

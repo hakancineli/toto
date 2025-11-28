@@ -1,0 +1,290 @@
+.takim-sayfasi {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.geri-buton {
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(20, 40, 80, 0.8));
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.geri-buton:hover {
+  background: linear-gradient(135deg, rgba(30, 60, 114, 1), rgba(20, 40, 80, 1));
+  border-color: #4ade80;
+  transform: translateX(-5px);
+}
+
+.takim-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(20, 40, 80, 0.8));
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.takim-logo-container {
+  position: relative;
+}
+
+.takim-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.takim-yildizlar {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.takim-bilgileri h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.takim-lig {
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  margin: 0.5rem 0;
+}
+
+.takim-oyuncu-sayisi {
+  font-size: 1rem;
+  color: #4ade80;
+  margin: 0.5rem 0;
+}
+
+.futbol-sahasi {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  background: linear-gradient(180deg, #2d5016 0%, #1a7a1a 50%, #2d5016 100%);
+  border: 4px solid #fff;
+  border-radius: 10px;
+  margin: 2rem auto;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.saha-cizgileri {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.kale-cizgisi {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  left: 0;
+}
+
+.kale-cizgisi.ust {
+  top: 0;
+}
+
+.kale-cizgisi.alt {
+  bottom: 0;
+}
+
+.orta-cizgi {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.orta-cizgi::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ceza-sahasi {
+  position: absolute;
+  width: 30%;
+  height: 20%;
+  border: 2px solid #fff;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ceza-sahasi.ust {
+  top: 0;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.ceza-sahasi.alt {
+  bottom: 0;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.oyuncu-saha {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.oyuncu-saha:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 20;
+}
+
+.oyuncu-resim-saha {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.oyuncu-tooltip {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  z-index: 30;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.oyuncu-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(0, 0, 0, 0.9);
+}
+
+.oyuncu-tooltip strong {
+  display: block;
+  color: #ffd700;
+  margin-bottom: 5px;
+}
+
+.oyuncu-listesi {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(20, 40, 80, 0.8));
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.oyuncu-listesi h2 {
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.oyuncu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.oyuncu-kart {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.oyuncu-kart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.oyuncu-kart img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  margin-bottom: 0.5rem;
+}
+
+.oyuncu-bilgi h4 {
+  color: #fff;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.oyuncu-bilgi p {
+  color: #a0a0a0;
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .futbol-sahasi {
+    height: 400px;
+  }
+  
+  .oyuncu-resim-saha {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .takim-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,225 @@
+import React, { useState, useEffect } from 'react';
+import './TakimSayfasi.css';
+
+const TakimSayfasi = ({ takim, onGeri }) => {
+  const [oyuncular, setOyuncular] = useState([]);
+  const [hoveredPlayer, setHoveredPlayer] = useState(null);
+
+  useEffect(() => {
+    // Takım oyuncularını yükle
+    if (takim && takim.oyuncular) {
+      setOyuncular(takim.oyuncular);
+    }
+  }, [takim]);
+
+  if (!takim) {
+    return <div className="takim-sayfasi">Takım bulunamadı</div>;
+  }
+
+  // Formasyon pozisyonları (4-3-3 örneği)
+  const formasyon = {
+    kaleci: { x: 50, y: 95 },
+    defans: [
+      { x: 20, y: 75, pos: 'SLB' },
+      { x: 40, y: 75, pos: 'SLMB' },
+      { x: 60, y: 75, pos: 'SĞMB' },
+      { x: 80, y: 75, pos: 'SĞB' }
+    ],
+    ortaSaha: [
+      { x: 30, y: 50, pos: 'SDO' },
+      { x: 50, y: 50, pos: 'MOO' },
+      { x: 70, y: 50, pos: 'SĞDO' }
+    ],
+    forvet: [
+      { x: 30, y: 25, pos: 'SLO' },
+      { x: 50, y: 25, pos: 'SNT' },
+      { x: 70, y: 25, pos: 'SĞO' }
+    ]
+  };
+
+  // Pozisyona göre oyuncu bul
+  const getPlayerByPosition = (position) => {
+    return oyuncular.find(p => 
+      p.mevki === position || 
+      p.basMevki === position ||
+      p.pozisyon === position
+    );
+  };
+
+  return (
+    <div className="takim-sayfasi">
+      {onGeri && (
+        <button className="geri-buton" onClick={onGeri}>
+          ← Takımlara Dön
+        </button>
+      )}
+      <div className="takim-header">
+        <div className="takim-logo-container">
+          <img 
+            src={takim.logo || 'https://via.placeholder.com/100'} 
+            alt={takim.isim} 
+            className="takim-logo"
+            onError={(e) => {
+              e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(takim.isim)}&size=200&background=1e3c72&color=fff&bold=true`;
+            }}
+          />
+          {takim.yildizSayisi > 0 && (
+            <div className="takim-yildizlar">
+              {'⭐'.repeat(Math.min(takim.yildizSayisi, 5))}
+            </div>
+          )}
+        </div>
+        <div className="takim-bilgileri">
+          <h1>{takim.isim}</h1>
+          <p className="takim-lig">{takim.lig}</p>
+          <p className="takim-oyuncu-sayisi">{oyuncular.length} oyuncu</p>
+        </div>
+      </div>
+
+      <div className="futbol-sahasi">
+        <div className="saha-cizgileri">
+          {/* Kale çizgileri */}
+          <div className="kale-cizgisi ust"></div>
+          <div className="kale-cizgisi alt"></div>
+          
+          {/* Orta saha çizgisi */}
+          <div className="orta-cizgi"></div>
+          
+          {/* Ceza sahası */}
+          <div className="ceza-sahasi ust"></div>
+          <div className="ceza-sahasi alt"></div>
+        </div>
+
+        {/* Kaleci */}
+        {formasyon.kaleci && (() => {
+          const player = getPlayerByPosition('KL') || oyuncular.find(p => p.mevki?.includes('KL'));
+          if (player) {
+            return (
+              <div
+                className="oyuncu-saha"
+                style={{ left: `${formasyon.kaleci.x}%`, top: `${formasyon.kaleci.y}%` }}
+                onMouseEnter={() => setHoveredPlayer(player)}
+                onMouseLeave={() => setHoveredPlayer(null)}
+              >
+                <img src={player.resim || 'https://via.placeholder.com/60'} alt={player.isim} className="oyuncu-resim-saha" />
+                {hoveredPlayer?.id === player.id && (
+                  <div className="oyuncu-tooltip">
+                    <strong>{player.isim}</strong>
+                    <div>Güç: {player.guc || player.güç || 50}</div>
+                    <div>Pozisyon: {player.mevki || player.basMevki}</div>
+                  </div>
+                )}
+              </div>
+            );
+          }
+          return null;
+        })()}
+
+        {/* Defans */}
+        {formasyon.defans.map((pos, index) => {
+          const player = getPlayerByPosition(pos.pos) || oyuncular[index + 1];
+          if (player) {
+            return (
+              <div
+                key={`defans-${index}`}
+                className="oyuncu-saha"
+                style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                onMouseEnter={() => setHoveredPlayer(player)}
+                onMouseLeave={() => setHoveredPlayer(null)}
+              >
+                <img src={player.resim || 'https://via.placeholder.com/60'} alt={player.isim} className="oyuncu-resim-saha" />
+                {hoveredPlayer?.id === player.id && (
+                  <div className="oyuncu-tooltip">
+                    <strong>{player.isim}</strong>
+                    <div>Güç: {player.guc || player.güç || 50}</div>
+                    <div>Pozisyon: {player.mevki || player.basMevki}</div>
+                  </div>
+                )}
+              </div>
+            );
+          }
+          return null;
+        })}
+
+        {/* Orta Saha */}
+        {formasyon.ortaSaha.map((pos, index) => {
+          const player = getPlayerByPosition(pos.pos) || oyuncular[index + 5];
+          if (player) {
+            return (
+              <div
+                key={`orta-${index}`}
+                className="oyuncu-saha"
+                style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                onMouseEnter={() => setHoveredPlayer(player)}
+                onMouseLeave={() => setHoveredPlayer(null)}
+              >
+                <img src={player.resim || 'https://via.placeholder.com/60'} alt={player.isim} className="oyuncu-resim-saha" />
+                {hoveredPlayer?.id === player.id && (
+                  <div className="oyuncu-tooltip">
+                    <strong>{player.isim}</strong>
+                    <div>Güç: {player.guc || player.güç || 50}</div>
+                    <div>Pozisyon: {player.mevki || player.basMevki}</div>
+                  </div>
+                )}
+              </div>
+            );
+          }
+          return null;
+        })}
+
+        {/* Forvet */}
+        {formasyon.forvet.map((pos, index) => {
+          const player = getPlayerByPosition(pos.pos) || oyuncular[index + 8];
+          if (player) {
+            return (
+              <div
+                key={`forvet-${index}`}
+                className="oyuncu-saha"
+                style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                onMouseEnter={() => setHoveredPlayer(player)}
+                onMouseLeave={() => setHoveredPlayer(null)}
+              >
+                <img src={player.resim || 'https://via.placeholder.com/60'} alt={player.isim} className="oyuncu-resim-saha" />
+                {hoveredPlayer?.id === player.id && (
+                  <div className="oyuncu-tooltip">
+                    <strong>{player.isim}</strong>
+                    <div>Güç: {player.guc || player.güç || 50}</div>
+                    <div>Pozisyon: {player.mevki || player.basMevki}</div>
+                  </div>
+                )}
+              </div>
+            );
+          }
+          return null;
+        })}
+      </div>
+
+      {/* Tüm oyuncular listesi */}
+      <div className="oyuncu-listesi">
+        <h2>Kadro</h2>
+        <div className="oyuncu-grid">
+          {oyuncular.map(oyuncu => (
+            <div key={oyuncu.id} className="oyuncu-kart">
+              <img 
+                src={oyuncu.resim || 'https://via.placeholder.com/100'} 
+                alt={oyuncu.isim}
+                onError={(e) => {
+                  const isim = oyuncu.isim.replace(/\s+/g, '+');
+                  e.target.src = `https://ui-avatars.com/api/?name=${isim}&size=200&background=1e3c72&color=fff&bold=true&font-size=0.6&length=2`;
+                }}
+              />
+              <div className="oyuncu-bilgi">
+                <h4>{oyuncu.isim}</h4>
+                <p>{oyuncu.mevki || oyuncu.basMevki}</p>
+                <p>Güç: {oyuncu.guc || oyuncu.güç || 50}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TakimSayfasi;
+

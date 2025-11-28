@@ -5,12 +5,13 @@ import OyunIkiOyuncu from './components/OyunIkiOyuncu';
 import OyunAI from './components/OyunAI';
 import LiderlikTablosu from './components/LiderlikTablosu';
 import FutbolcuGalerisi from './components/FutbolcuGalerisi';
+import TakimlarListesi from './components/TakimlarListesi';
 import { getAktifKullanici, getKullanicilar, cikisYap } from './utils/auth';
 import './App.css';
 
 function App() {
   const [aktifKullanici, setAktifKullanici] = useState(null);
-  const [sayfa, setSayfa] = useState('ana'); // 'ana', 'profil', 'liderlik', 'oyun', 'galeri'
+  const [sayfa, setSayfa] = useState('ana'); // 'ana', 'profil', 'liderlik', 'oyun', 'galeri', 'takimlar'
   const [oyunModu, setOyunModu] = useState(null); // 'ai' veya 'ikiOyuncu'
   const [oyuncu1, setOyuncu1] = useState(null);
   const [oyuncu2, setOyuncu2] = useState(null);
@@ -127,6 +128,12 @@ function App() {
           >
             Futbolcular
           </button>
+          <button
+            className={`nav-buton ${sayfa === 'takimlar' ? 'aktif' : ''}`}
+            onClick={() => setSayfa('takimlar')}
+          >
+            Takımlar
+          </button>
           <button className="nav-buton cikis" onClick={handleCikis}>
             Çıkış
           </button>
@@ -186,6 +193,8 @@ function App() {
       {sayfa === 'liderlik' && <LiderlikTablosu />}
 
       {sayfa === 'galeri' && <FutbolcuGalerisi />}
+
+      {sayfa === 'takimlar' && <TakimlarListesi />}
     </div>
   );
 }
