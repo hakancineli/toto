@@ -1,6 +1,10 @@
 ../şerefvural
 ../meltemtugay
 ../app
+../postcss.config.js
+../tailwind.config.js
+../postcss.config.mjs
+../tailwind.config.mjs
 ../whatsapp-temiz
 ../whatsapp-server.log
 ../whatsapp.db
