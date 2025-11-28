@@ -6,16 +6,25 @@ import './TakimlarListesi.css';
 let sofifaTakimlar = [];
 let sofifaFutbolcular = [];
 
+// Vite build sırasında JSON dosyaları yoksa hata vermemesi için
 try {
-  sofifaTakimlar = require('../data/sofifa-takimlar.json') || [];
+  sofifaTakimlar = require('../data/sofifa-takimlar.json');
+  if (!Array.isArray(sofifaTakimlar)) {
+    sofifaTakimlar = [];
+  }
 } catch (e) {
-  console.warn('sofifa-takimlar.json yüklenemedi:', e);
+  // Dosya yoksa veya hata varsa boş array kullan
+  sofifaTakimlar = [];
 }
 
 try {
-  sofifaFutbolcular = require('../data/sofifa-futbolcular.json') || [];
+  sofifaFutbolcular = require('../data/sofifa-futbolcular.json');
+  if (!Array.isArray(sofifaFutbolcular)) {
+    sofifaFutbolcular = [];
+  }
 } catch (e) {
-  console.warn('sofifa-futbolcular.json yüklenemedi:', e);
+  // Dosya yoksa veya hata varsa boş array kullan
+  sofifaFutbolcular = [];
 }
 
 const TakimlarListesi = () => {
@@ -123,4 +132,3 @@ const TakimlarListesi = () => {
 };
 
 export default TakimlarListesi;
-
