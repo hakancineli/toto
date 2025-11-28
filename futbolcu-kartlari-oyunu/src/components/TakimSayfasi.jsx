@@ -81,10 +81,6 @@ const TakimSayfasi = ({ takim, onGeri }) => {
           src="/futbol-sahasi.jpg" 
           alt="Futbol Saha" 
           className="saha-gorseli"
-          onError={(e) => {
-            // Fallback: Alternatif görsel URL'si
-            e.target.src = "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop";
-          }}
         />
 
         {/* Kaleci */}
