@@ -81,17 +81,25 @@
 .futbol-sahasi {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  height: 700px;
-  background: linear-gradient(180deg, #2d5016 0%, #1a7a1a 30%, #2d8a2d 50%, #1a7a1a 70%, #2d5016 100%);
-  background-image: 
-    repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(255, 255, 255, 0.1) 49px, rgba(255, 255, 255, 0.1) 50px),
-    repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(255, 255, 255, 0.1) 49px, rgba(255, 255, 255, 0.1) 50px);
-  border: 5px solid #fff;
-  border-radius: 15px;
+  max-width: 1000px;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  min-height: 500px;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      #4a9f4a 0px,
+      #4a9f4a 30px,
+      #3d8f3d 30px,
+      #3d8f3d 60px
+    );
+  border: 2px solid #fff;
+  border-radius: 8px;
   margin: 2rem auto;
   overflow: hidden;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .saha-cizgileri {
@@ -117,10 +125,28 @@
   bottom: 0;
 }
 
+/* Yan çizgiler (touchlines) */
+.yan-cizgi {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: #fff;
+}
+
+.yan-cizgi.sol {
+  left: 0;
+  top: 0;
+}
+
+.yan-cizgi.sag {
+  right: 0;
+  top: 0;
+}
+
 .orta-cizgi {
   position: absolute;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: #fff;
   top: 50%;
   left: 0;
@@ -130,9 +156,9 @@
 .orta-cizgi::before {
   content: '';
   position: absolute;
-  width: 120px;
-  height: 120px;
-  border: 3px solid #fff;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fff;
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -142,8 +168,8 @@
 .orta-cizgi::after {
   content: '';
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background: #fff;
   border-radius: 50%;
   top: 50%;
@@ -153,9 +179,9 @@
 
 .ceza-sahasi {
   position: absolute;
-  width: 35%;
-  height: 22%;
-  border: 3px solid #fff;
+  width: 40%;
+  height: 20%;
+  border: 2px solid #fff;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -163,63 +189,173 @@
 .ceza-sahasi.ust {
   top: 0;
   border-bottom: none;
-  border-radius: 15px 15px 0 0;
 }
 
+/* Kale alanı (6-yard box) */
 .ceza-sahasi.ust::before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 40%;
-  height: 50%;
-  border: 3px solid #fff;
+  width: 30%;
+  height: 40%;
+  border: 2px solid #fff;
   border-top: none;
-  border-radius: 0 0 15px 15px;
 }
 
+/* Penaltı noktası */
 .ceza-sahasi.ust::after {
   content: '';
   position: absolute;
-  bottom: 15%;
+  bottom: 18%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 2px;
+  transform: translate(-50%, 50%);
+  width: 6px;
+  height: 6px;
   background: #fff;
   border-radius: 50%;
+}
+
+/* Penaltı yayı (D-area) - üst */
+.penalti-yayi-ust {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 12%;
+  border: 2px solid #fff;
+  border-bottom: none;
+  border-radius: 40% 40% 0 0;
 }
 
 .ceza-sahasi.alt {
   bottom: 0;
   border-top: none;
-  border-radius: 0 0 15px 15px;
 }
 
+/* Kale alanı (6-yard box) - alt */
 .ceza-sahasi.alt::before {
   content: '';
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 40%;
-  height: 50%;
-  border: 3px solid #fff;
+  width: 30%;
+  height: 40%;
+  border: 2px solid #fff;
   border-bottom: none;
-  border-radius: 15px 15px 0 0;
 }
 
+/* Penaltı noktası - alt */
 .ceza-sahasi.alt::after {
   content: '';
   position: absolute;
-  top: 15%;
+  top: 18%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 2px;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
   background: #fff;
   border-radius: 50%;
+}
+
+/* Penaltı yayı (D-area) - alt */
+.penalti-yayi-alt {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 12%;
+  border: 2px solid #fff;
+  border-top: none;
+  border-radius: 0 0 40% 40%;
+}
+
+/* Köşe yayları */
+.kose-yayi {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.kose-yayi.sol-ust {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.kose-yayi.sag-ust {
+  top: -10px;
+  right: -10px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.kose-yayi.sol-alt {
+  bottom: -10px;
+  left: -10px;
+  border-right: none;
+  border-top: none;
+}
+
+.kose-yayi.sag-alt {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Kaleler */
+.kale {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 80px;
+  z-index: 5;
+}
+
+.kale-ust {
+  top: 0;
+}
+
+.kale-alt {
+  bottom: 0;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.kale-post {
+  position: absolute;
+  width: 4px;
+  height: 80px;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.kale-post.sol-post {
+  left: 0;
+  top: 0;
+}
+
+.kale-post.sag-post {
+  right: 0;
+  top: 0;
+}
+
+.kale-crossbar {
+  position: absolute;
+  width: 120px;
+  height: 4px;
+  background: #fff;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .oyuncu-saha {
@@ -237,37 +373,37 @@
 
 .oyuncu-rating-saha {
   position: absolute;
-  bottom: -25px;
+  bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
   background: #22c55e;
   color: #fff;
   font-weight: bold;
-  font-size: 0.85rem;
-  padding: 4px 8px;
-  border-radius: 12px;
+  font-size: 0.75rem;
+  padding: 3px 6px;
+  border-radius: 8px;
   border: 2px solid #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  min-width: 35px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  min-width: 30px;
   text-align: center;
   white-space: nowrap;
 }
 
 .oyuncu-resim-saha {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border: 4px solid #fff;
+  border: 3px solid #fff;
   object-fit: cover;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
 }
 
 .oyuncu-saha:hover .oyuncu-resim-saha {
-  transform: scale(1.15);
+  transform: scale(1.1);
   border-color: #ffd700;
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
 }
 
 .oyuncu-tooltip {
