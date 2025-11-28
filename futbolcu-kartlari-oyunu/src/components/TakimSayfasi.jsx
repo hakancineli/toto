@@ -63,9 +63,9 @@ const TakimSayfasi = ({ takim, onGeri }) => {
               e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(takim.isim)}&size=200&background=1e3c72&color=fff&bold=true`;
             }}
           />
-          {takim.yildizSayisi > 0 && (
+          {(takim.yildizSayisi > 0 || takim.yildizlar > 0) && (
             <div className="takim-yildizlar">
-              {'⭐'.repeat(Math.min(takim.yildizSayisi, 5))}
+              {'⭐'.repeat(Math.min(takim.yildizSayisi || Math.floor((takim.yildizlar || 0) / 20), 5))}
             </div>
           )}
         </div>

@@ -1,1 +1,90 @@
-[]
+[
+  {
+    "id": 325,
+    "isim": "Galatasaray SK",
+    "logo": "https://cdn.sofifa.net/teams/325/60.png",
+    "ulke": "Türkiye",
+    "lig": "Türkiye Süper Lig",
+    "piyasaDegeri": "€250M",
+    "yildizlar": 85,
+    "yildizSayisi": 4,
+    "oyuncular": []
+  },
+  {
+    "id": 326,
+    "isim": "Fenerbahçe SK",
+    "logo": "https://cdn.sofifa.net/teams/326/60.png",
+    "ulke": "Türkiye",
+    "lig": "Türkiye Süper Lig",
+    "piyasaDegeri": "€200M",
+    "yildizlar": 83,
+    "yildizSayisi": 4,
+    "oyuncular": []
+  },
+  {
+    "id": 327,
+    "isim": "Beşiktaş JK",
+    "logo": "https://cdn.sofifa.net/teams/327/60.png",
+    "ulke": "Türkiye",
+    "lig": "Türkiye Süper Lig",
+    "piyasaDegeri": "€180M",
+    "yildizlar": 82,
+    "yildizSayisi": 4,
+    "oyuncular": []
+  },
+  {
+    "id": 1,
+    "isim": "Manchester City",
+    "logo": "https://cdn.sofifa.net/teams/1/60.png",
+    "ulke": "İngiltere",
+    "lig": "Premier League",
+    "piyasaDegeri": "€1.2B",
+    "yildizlar": 92,
+    "yildizSayisi": 5,
+    "oyuncular": []
+  },
+  {
+    "id": 2,
+    "isim": "Real Madrid",
+    "logo": "https://cdn.sofifa.net/teams/2/60.png",
+    "ulke": "İspanya",
+    "lig": "La Liga",
+    "piyasaDegeri": "€1.1B",
+    "yildizlar": 91,
+    "yildizSayisi": 5,
+    "oyuncular": []
+  },
+  {
+    "id": 3,
+    "isim": "Barcelona",
+    "logo": "https://cdn.sofifa.net/teams/3/60.png",
+    "ulke": "İspanya",
+    "lig": "La Liga",
+    "piyasaDegeri": "€1.0B",
+    "yildizlar": 90,
+    "yildizSayisi": 5,
+    "oyuncular": []
+  },
+  {
+    "id": 4,
+    "isim": "Bayern Munich",
+    "logo": "https://cdn.sofifa.net/teams/4/60.png",
+    "ulke": "Almanya",
+    "lig": "Bundesliga",
+    "piyasaDegeri": "€950M",
+    "yildizlar": 89,
+    "yildizSayisi": 5,
+    "oyuncular": []
+  },
+  {
+    "id": 5,
+    "isim": "Paris Saint-Germain",
+    "logo": "https://cdn.sofifa.net/teams/5/60.png",
+    "ulke": "Fransa",
+    "lig": "Ligue 1",
+    "piyasaDegeri": "€900M",
+    "yildizlar": 88,
+    "yildizSayisi": 5,
+    "oyuncular": []
+  }
+]
