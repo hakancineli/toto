@@ -77,44 +77,15 @@ const TakimSayfasi = ({ takim, onGeri }) => {
       </div>
 
       <div className="futbol-sahasi">
-        <div className="saha-cizgileri">
-          {/* Yan çizgiler */}
-          <div className="yan-cizgi sol"></div>
-          <div className="yan-cizgi sag"></div>
-          
-          {/* Kale çizgileri */}
-          <div className="kale-cizgisi ust"></div>
-          <div className="kale-cizgisi alt"></div>
-          
-          {/* Orta saha çizgisi */}
-          <div className="orta-cizgi"></div>
-          
-          {/* Ceza sahası */}
-          <div className="ceza-sahasi ust"></div>
-          <div className="ceza-sahasi alt"></div>
-          
-          {/* Penaltı yayları */}
-          <div className="penalti-yayi-ust"></div>
-          <div className="penalti-yayi-alt"></div>
-          
-          {/* Köşe yayları */}
-          <div className="kose-yayi sol-ust"></div>
-          <div className="kose-yayi sag-ust"></div>
-          <div className="kose-yayi sol-alt"></div>
-          <div className="kose-yayi sag-alt"></div>
-          
-          {/* Kaleler */}
-          <div className="kale kale-ust">
-            <div className="kale-post sol-post"></div>
-            <div className="kale-post sag-post"></div>
-            <div className="kale-crossbar"></div>
-          </div>
-          <div className="kale kale-alt">
-            <div className="kale-post sol-post"></div>
-            <div className="kale-post sag-post"></div>
-            <div className="kale-crossbar"></div>
-          </div>
-        </div>
+        <img 
+          src="/futbol-sahasi.jpg" 
+          alt="Futbol Saha" 
+          className="saha-gorseli"
+          onError={(e) => {
+            console.error('Görsel yüklenemedi. Lütfen görseli public/futbol-sahasi.jpg olarak kaydedin.');
+            e.target.style.display = 'none';
+          }}
+        />
 
         {/* Kaleci */}
         {formasyon.kaleci && (() => {
